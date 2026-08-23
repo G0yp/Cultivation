@@ -1,6 +1,10 @@
 # Cultivation
 Repo for Xianxia game collaboration
 
+# Project link
+- https://github.com/users/G0yp/projects/2/views/1
+- This has Backlog, Ready, In Progress, In Review, and Done
+
 # Ideas
 - Isometric/topdown (like necesse?) graphics
 - Start in a town
