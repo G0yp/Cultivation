@@ -11,10 +11,16 @@ Repo for Xianxia game collaboration
 - Semi open world (thinking like gen 4 Pokemon Platinum. Open world with gated progression)
 - Procedurally generated dungeons (common) or inheritances (rare)
 - Farming / Gathering Herbs / Alchemy
+- Immortality / Reset Layers / Reincarnation
+- Skills and Abilities
+- Shops
+- Bandits / Random events
+- Cultivation Manuals / Skill Manuals
+- Blacksmithing
+- Tailoring
+- Numbered Skill System?
 
-
-
-# Cultivation
+# Cultivation (But actually)
 - Foundation - First realm should be the time to build foundation, giving a bonus or debuff to qi gain depending on your foundation
   - probably raised by cultivating, herbs, defeating enemies, treasures, etc
 - Realms - Obviously we need realms, we can figure this out later
