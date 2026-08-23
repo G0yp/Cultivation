@@ -21,6 +21,7 @@ Godot or Unity
 - completely free
 - lightweight
 - first class Linux support
+- GDscript (Python), C#, and C++ support
 
 ## Unity
 - I am not a Unity glazer, idk
