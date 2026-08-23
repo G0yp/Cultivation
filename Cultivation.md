@@ -14,3 +14,9 @@ To be put in ./docs folder eventually
 
 # Talent/bloodline
 - Can't just have a regular cultivation story, there needs to be some gimmick to make the character stronger. Could be somehting like collecting bloodlines or reincarnating and increasing innate talent based off of achievments.
+
+
+
+# Stats/Proficiencies/Daos/Realms
+Stats - Strength, Defense, Agility, Intelligence, Charisma, Wisdom
+- fist half is body cultivation, second half is qi cultivation
