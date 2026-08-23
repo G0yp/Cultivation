@@ -19,6 +19,7 @@ Repo for Xianxia game collaboration
 - Blacksmithing
 - Tailoring
 - Numbered Skill System?
+- Secret realms that show up with special resources or monsters to fight 
 
 # Cultivation (But actually)
 - Foundation - First realm should be the time to build foundation, giving a bonus or debuff to qi gain depending on your foundation
