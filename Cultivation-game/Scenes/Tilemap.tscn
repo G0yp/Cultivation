@@ -1,13 +1,13 @@
 [gd_scene format=4 uid="uid://bbbcf2ffdrwyb"]
 
-[ext_resource type="Texture2D" uid="uid://dggcn6pqafiny" path="res://Assets/Mo_&_Krill_Render-1561214332.png" id="2_emjop"]
-[ext_resource type="Script" uid="uid://bebybt8j6fme5" path="res://Player.cs" id="2_uvehw"]
-[ext_resource type="Texture2D" uid="uid://cxmpcwvk8ymdt" path="res://Assets/Tilesets/Grass.png" id="3_2kxir"]
-[ext_resource type="Texture2D" uid="uid://xj020mvb6rcw" path="res://Assets/Tilesets/Water.png" id="3_x4y4m"]
-[ext_resource type="Texture2D" uid="uid://dq5pdin6hqofm" path="res://Assets/Tilesets/Tilled_Dirt_v2.png" id="4_x4y4m"]
+[ext_resource type="Texture2D" uid="uid://cxmpcwvk8ymdt" path="res://Assets/Tilesets/Grass.png" id="1_rdtdr"]
+[ext_resource type="Texture2D" uid="uid://dq5pdin6hqofm" path="res://Assets/Tilesets/Tilled_Dirt_v2.png" id="2_snjhs"]
+[ext_resource type="Texture2D" uid="uid://xj020mvb6rcw" path="res://Assets/Tilesets/Water.png" id="3_ao201"]
+[ext_resource type="Script" uid="uid://bebybt8j6fme5" path="res://Scripts/Player.cs" id="4_rdtdr"]
+[ext_resource type="Texture2D" uid="uid://dggcn6pqafiny" path="res://Assets/Mo_&_Krill_Render-1561214332.png" id="5_qx2ib"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0gr3w"]
-texture = ExtResource("3_2kxir")
+texture = ExtResource("1_rdtdr")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -81,7 +81,7 @@ texture = ExtResource("3_2kxir")
 8:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_trrh8"]
-texture = ExtResource("4_x4y4m")
+texture = ExtResource("2_snjhs")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -154,7 +154,7 @@ texture = ExtResource("4_x4y4m")
 9:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s3d2i"]
-texture = ExtResource("3_x4y4m")
+texture = ExtResource("3_ao201")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -185,11 +185,11 @@ tile_set = SubResource("TileSet_bmilm")
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1094748907]
 position = Vector2(500, 250)
 scale = Vector2(0.305, 0.305)
-script = ExtResource("2_uvehw")
+script = ExtResource("4_rdtdr")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=799586340]
 scale = Vector2(0.045, 0.045)
-texture = ExtResource("2_emjop")
+texture = ExtResource("5_qx2ib")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1687473410]
 position = Vector2(3, -1)
