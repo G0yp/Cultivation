@@ -84,7 +84,7 @@ Same process as code contribution
 
 ## Styleguides
 
-Somebody else write this (Zander ?)
+Somebody else write this (Zander ?, like where exports, and classes go etc...)
 
 
 ### Commit Messages
