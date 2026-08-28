@@ -15,6 +15,6 @@ public partial class CultivationStats : Resource
 
     public bool CanAttemptBreakthrough()
     {
-        return CurrentRealm != null && currentQi >= CurrentRealm.qiToBreakthrough
+        return CurrentRealm != null && currentQi >= CurrentRealm.qiToBreakthrough;
     }
 }
