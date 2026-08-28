@@ -2,14 +2,14 @@ using Godot;
 using System;
 
 [GlobalClass]
-public partial class Attributes : Resources
+public partial class Attributes : Resource
 {
     public int level = 1;
     public float currentXp = 0f;
 
     public float GetRequiredXpForNextLevel()
     {
-        return 100f * Math.Pow(Level, 1.3f);
+        return (float)(100.0 * Math.Pow((double)level, 1.3));
     }
 
     public void AddXp(float amount, int levelCap)
