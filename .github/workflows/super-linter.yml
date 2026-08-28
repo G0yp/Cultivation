@@ -31,6 +31,9 @@ jobs:
           VALIDATE_ALL_CODEBASE: false
           CREATE_LOG_FILE: false
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Clean Super-Linter logs
+        run: rm -f super-linter.log
           
       - name: Commit and push linting fixes
         # Run only on:
