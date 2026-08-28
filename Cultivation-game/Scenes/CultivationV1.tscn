@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://baft33i0rs2jf"]
 
 [ext_resource type="Script" uid="uid://b2q81usv2oky1" path="res://Scripts/CultivationManager.cs" id="1_a32rn"]
+[ext_resource type="Script" uid="uid://cvvlj17x7ppe2" path="res://Scripts/CharacterStatistics.cs" id="2_gor2f"]
+
+[sub_resource type="Resource" id="Resource_5m3is"]
+script = ExtResource("2_gor2f")
+metadata/_custom_type_script = "uid://cvvlj17x7ppe2"
 
 [node name="CultivationV1" type="Control" unique_id=344837201]
 layout_mode = 3
@@ -10,6 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_a32rn")
+CharStats = SubResource("Resource_5m3is")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=697901626]
 layout_mode = 1
