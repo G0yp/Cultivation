@@ -14,6 +14,7 @@ on:
 jobs:
   run-lint:
     runs-on: ubuntu-latest
+    if: github.actor !='super-linter'
     permissions:
       contents: write
 
