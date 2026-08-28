@@ -14,9 +14,10 @@ on:
 jobs:
   run-lint:
     runs-on: ubuntu-latest
+    if: github.actor !='super-linter'
     permissions:
-      contents: read
-      statuses: write
+      contents: write
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -28,5 +29,22 @@ jobs:
         uses: github/super-linter@v4
         env:
           VALIDATE_ALL_CODEBASE: false
-          DEFAULT_BRANCH: "main"
+          CREATE_LOG_FILE: false
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Clean Super-Linter logs
+        run: rm -f super-linter.log
+          
+      - name: Commit and push linting fixes
+        # Run only on:
+        # - Pull requests
+        # - Not on the default branch
+        if: >
+          github.event_name == 'pull_request' &&
+          github.ref_name != github.event.repository.default_branch
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          branch: ${{ github.event.pull_request.head.ref || github.head_ref || github.ref }}
+          commit_message: "chore: fix linting issues"
+          commit_user_name: super-linter
+          commit_user_email: super-linter@super-linter.dev
