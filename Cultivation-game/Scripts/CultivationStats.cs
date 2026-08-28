@@ -10,7 +10,7 @@ public partial class CultivationStats : Resource
 
     public void ProcessQiGathering(float delta)
     {
-        currentQi += (QiGainFlat * QiGainMult) * delta;
+        currentQi += (qiGainFlat * qiGainMult) * delta;
     }
 
     public bool CanAttemptBreakthrough()
