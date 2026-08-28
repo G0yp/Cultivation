@@ -1,5 +1,6 @@
 using Godot;
 using System;
+// ( ͡° ᴥ ͡°)
 
 public enum CultivationRealm
 {
@@ -11,22 +12,33 @@ public enum CultivationRealm
     TrueImmortal
 }
 
+public enum CultivationStage
+{
+    Lower,
+    Middle,
+    Upper,
+    Peak,
+}
+
 [GlobalClass]
 public partial class RealmConfig : Resource
 {
     public CultivationRealm currentRealm = CultivationRealm.Mortal;
-    /* if we want different stat values we can use a dictionary like this
+
     var values = new Dictionary<int, int>
     {
+        {0, 0},
         {1, 10},
-        {2, 30},
-        {3, 60},
-        {4, 100},
-        {5, 150},
-        {6, 210}
-    };*/
+        {2, 15},
+        {3, 20},
+        {4, 25},
+        {5, 50},
+    };
 
-    public int StatCap => 5 * ((int)currentRealm * (int)currentRealm) + 5 * (int)currentRealm;
+    public int StatCap => 10 + values[currentRealm];
+
+    // breakthrough func go in CultivationStats
+
     public float qiGainFlat = 1f;
     public float qiGainMult = 1f;
     public float qiToBreakthrough = 100f;

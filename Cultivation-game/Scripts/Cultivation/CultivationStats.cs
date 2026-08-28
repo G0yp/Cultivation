@@ -1,5 +1,6 @@
 using Godot;
 using System;
+// ( ͡° ᴥ ͡°)
 
 public partial class CultivationStats : Resource
 {
@@ -16,5 +17,11 @@ public partial class CultivationStats : Resource
     public bool CanAttemptBreakthrough()
     {
         return CurrentRealm != null && currentQi >= CurrentRealm.qiToBreakthrough;
+    }
+
+    public int Breakthrough()
+    {
+        if (CanAttemptBreakthrough() == True) { }
+        return 1;
     }
 }

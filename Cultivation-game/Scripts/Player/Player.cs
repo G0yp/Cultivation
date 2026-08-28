@@ -11,8 +11,9 @@ public partial class Player : CharacterBody2D{
 	public float Sprint;
 	[Export]
 	public float DashDistance;
-	// Internal speed
-	float speed;
+    // Internal speed
+    float speed;
+
 
 	public override void _PhysicsProcess(double delta){
 		Vector2 velocity = Velocity;

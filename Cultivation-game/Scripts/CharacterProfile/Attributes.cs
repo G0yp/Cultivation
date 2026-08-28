@@ -1,5 +1,6 @@
 using Godot;
 using System;
+// ( ͡° ᴥ ͡°)
 
 [GlobalClass]
 public partial class Attributes : Resource
