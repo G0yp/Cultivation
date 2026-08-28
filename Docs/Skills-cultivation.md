@@ -8,18 +8,22 @@
 # Body cultivation
 - has 9(can be changed) tiers instead of different realms.
 - First 2 can be reached by regular mortals, but after that requires talent
+- Body cultivation is a multiplier to stats making it really strong early game and extreamly beneficial late game. 
 
-# Cultivation Techniques
+# Cultivation Manuals
 - Has 9 tiers
-- Reaching tier 9 is supposed to be hard, but the technique will upgrade through Mortal, Earth, Immortal, and Heaven grades when it maxes out 9
+- Reaching tier 9 is supposed to be hard, but the technique will upgrade through Mortal, Earth, Immortal, and Heaven grades.
+- Cultivation is a static increase to stats. The Upper tier of Qi Refining will be around 3 times as strong as a standard mortal.
 
 # Dao - 5 Elements
+> Dao's level up when used through the same Mortal, Earth, Immortal, and Heaven grades. Each grade has 9 sub tiers.
 - Fire
 - Earth
 - Water
 - Metal
 - Air
-- Qi (secret dao of Qi?)
+- Qi - Increases the speed of cultivation
+- Karma - Increases the gain or loss of reputation when doing quests
 
 # Foundations
 - Need a way to quantify quality of foundation (Mortal, Earth, Immortal, Heaven grades?)
@@ -53,9 +57,5 @@ Realms - Realms will also have a percentage for progress and increase by cultiva
 Reputation - dynamic system that affects interactions with NPCs and can determine if the character is a demonic cultivator or not. Influenced by Charisma stat
 Titles - gained based on actions with NPCs and story events - impacts non combat elements of game
 
-# Reincarnation - The reset layer
-- Resets stats (exluding talent) and Cultivation
-- Retains Proficiencies and daos
-- Once the Nascent Soul realm is reached Qi Cultivation will be retained but supressed until the body can withstand its power
-- Skill levels will also be retained, but will not be accessible if the cultivation technique changes
-
+# Reincarnation 
+- This is just the explaination for when you die. Nothing (maybe items?) is lost and you respond at your current residence in a sect or city.
