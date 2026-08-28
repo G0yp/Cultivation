@@ -84,7 +84,7 @@ Same process as code contribution
 
 ## Styleguides
 
-Somebody else write this (Zander ?, like where exports, and classes go etc...)
+Follow typical coding conventions. The Linter we've set up will fix most formatting issues.
 
 
 ### Commit Messages
