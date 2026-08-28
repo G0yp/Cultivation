@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d4cmp8m2xhyq2"]
 
 [ext_resource type="Script" uid="uid://bebybt8j6fme5" path="res://Scripts/Player.cs" id="1_kyqiw"]
-[ext_resource type="Texture2D" uid="uid://dggcn6pqafiny" path="res://Assets/Mo_&_Krill_Render-1561214332.png" id="2_gntrk"]
+[ext_resource type="Texture2D" uid="uid://df6818gpkfhdh" path="res://icon.svg" id="2_kyqiw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dewec"]
 size = Vector2(78, 68)
@@ -11,7 +11,7 @@ script = ExtResource("1_kyqiw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=191241706]
 scale = Vector2(0.045, 0.045)
-texture = ExtResource("2_gntrk")
+texture = ExtResource("2_kyqiw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1507831784]
 position = Vector2(3, -1)
