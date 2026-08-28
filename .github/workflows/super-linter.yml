@@ -28,15 +28,18 @@ jobs:
         uses: github/super-linter@v4
         env:
           VALIDATE_ALL_CODEBASE: false
-          DEFAULT_BRANCH: "main"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - name: Commit and push linting fixes
+        # Run only on:
+        # - Pull requests
+        # - Not on the default branch
+        if: >
+          github.event_name == 'pull_request' &&
+          github.ref_name != github.event.repository.default_branch
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          ref: ${{github.head_ref || github.ref_name}}
-          
-      - name: Auto-Commit Lint Fixes
-        uses: stefanzweifel/git-auto-commit-action@v7
-        with:
-          commit_message: "style: auto-fix linting issues"
+          branch: ${{ github.event.pull_request.head.ref || github.head_ref || github.ref }}
+          commit_message: "chore: fix linting issues"
+          commit_user_name: super-linter
+          commit_user_email: super-linter@super-linter.dev
