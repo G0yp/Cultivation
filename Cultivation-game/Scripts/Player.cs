@@ -1,17 +1,17 @@
 using Godot;
 using System;
 
-[Tool]
+
 public partial class Player : CharacterBody2D{
-	/// <summary>
-	/// Sets base speed of character before modification
-	/// </summary>
+	// Base speed which gets modified
 	[Export]
 	public float BaseSpeed;
-
+	// Speed modifier
 	[Export]
 	public float Sprint;
-
+	[Export]
+	public float DashDistance;
+	// Internal speed
 	float speed;
 
 	public override void _PhysicsProcess(double delta){
@@ -34,7 +34,11 @@ public partial class Player : CharacterBody2D{
 			velocity.X = Mathf.MoveToward(Velocity.X, 0, speed);
 			velocity.Y = Mathf.MoveToward(Velocity.Y, 0, speed);
 		}
-
+		if(Input.IsActionJustPressed("Dash")){
+			if (direction != Vector2.Zero){
+				Position += direction * DashDistance;
+			}
+		}
 		Velocity = velocity;
 		MoveAndSlide();
 	}

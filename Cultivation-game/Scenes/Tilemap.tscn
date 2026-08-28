@@ -40,3 +40,4 @@ position = Vector2(960, 540)
 scale = Vector2(2.715, 2.715)
 BaseSpeed = 125.0
 Sprint = 37.5
+DashDistance = 20.0
