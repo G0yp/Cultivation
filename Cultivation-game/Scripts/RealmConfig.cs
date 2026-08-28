@@ -26,7 +26,7 @@ public partial class RealmConfig : Resource
         {6, 210}
     };*/
 
-    public int statCap = 5*(currentRealm)^2 + 5*currentRealm;
+    public int statCap => 5*((int)currentRealm*(int)currentRealm) + 5*(int)currentRealm;
     public float qiGainFlat = 1f;
     public float qiGainMult = 1f;
     public float qiToBreakthrough = 100f;
