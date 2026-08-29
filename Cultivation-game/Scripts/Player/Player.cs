@@ -3,6 +3,7 @@ using System;
 
 
 public partial class Player : CharacterBody2D{
+
 	// Base speed which gets modified
 	[Export]
 	public float BaseSpeed;

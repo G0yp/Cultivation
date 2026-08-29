@@ -2,26 +2,34 @@ using Godot;
 using System;
 // ( ͡° ᴥ ͡°)
 
+[GlobalClass]
 public partial class CultivationStats : Resource
 {
-    [Export] public RealmConfig CurrentRealm { get; set; }
+    public RealmConfig BaseConfig;
+    public CharacterProfile CharacterProfile;
     public float qiGainFlat = 1f;
     public float qiGainMult = 1f;
     public float currentQi = 0f;
 
-    public void ProcessQiGathering(float delta)
+
+    public void ProcessQiGathering()
     {
-        currentQi += (qiGainFlat * qiGainMult) * delta;
+        currentQi += (qiGainFlat * qiGainMult);
     }
 
     public bool CanAttemptBreakthrough()
     {
-        return CurrentRealm != null && currentQi >= CurrentRealm.qiToBreakthrough;
+        return BaseConfig != null && currentQi >= BaseConfig.QiToBreakthrough;
     }
 
-    public int Breakthrough()
+    public bool Breakthrough()
     {
-        if (CanAttemptBreakthrough() == True) { }
-        return 1;
+        if (CanAttemptBreakthrough())
+        {
+            RealmConfig.CultivationRealm realm = CurrentRealm;
+            int statCap = CharacterProfile.StatCap;
+            statCap = BaseConfig.CalculateStatCap(realm, statCap);
+        }
+        return false;
     }
 }

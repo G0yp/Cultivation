@@ -2,44 +2,42 @@ using Godot;
 using System;
 // ( ͡° ᴥ ͡°)
 
-public enum CultivationRealm
-{
-    Mortal,
-    QiRefining,
-    FoundationEstablishment,
-    CoreFormation,
-    NascentSoul,
-    TrueImmortal
-}
-
-public enum CultivationStage
-{
-    Lower,
-    Middle,
-    Upper,
-    Peak,
-}
-
 [GlobalClass]
 public partial class RealmConfig : Resource
 {
-    public CultivationRealm currentRealm = CultivationRealm.Mortal;
-
-    var values = new Dictionary<int, int>
+    public enum CultivationRealm
     {
-        {0, 0},
-        {1, 10},
-        {2, 15},
-        {3, 20},
-        {4, 25},
-        {5, 50},
-    };
+        Mortal,
+        QiRefining,
+        FoundationEstablishment,
+        CoreFormation,
+        NascentSoul,
+        TrueImmortal
+    }
 
-    public int StatCap => 10 + values[currentRealm];
+    public enum CultivationStage
+    {
+        Lower = 1,
+        Middle,
+        Upper,
+        Peak,
+    }
 
-    // breakthrough func go in CultivationStats
 
-    public float qiGainFlat = 1f;
-    public float qiGainMult = 1f;
-    public float qiToBreakthrough = 100f;
+    public CultivationRealm CurrentRealm = CultivationRealm.Mortal;
+    public CultivationStage CurrentStage = CultivationStage.Lower;
+
+
+
+    public const int StatCap = 10;
+    public static int CalculateStatCap(int currentRealm, int statCap)
+    {
+        int[] statCapValues = [0, 10, 15, 20, 25, 50];
+        int baseStatCap = statCapValues[currentRealm];
+        return statCap + baseStatCap;
+    }
+
+    public float QiGainFlat = 1f;
+    public float QiGainMult = 1f;
+    public float QiToBreakthrough = 100f;
 }

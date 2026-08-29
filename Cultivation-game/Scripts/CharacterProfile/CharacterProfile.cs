@@ -2,6 +2,7 @@ using Godot;
 using System;
 // ( ͡° ᴥ ͡°)
 
+[GlobalClass]
 public partial class CharacterProfile : Resource
 {
     // List of pinned stats to show in pinned stat page
@@ -41,6 +42,7 @@ public partial class CharacterProfile : Resource
     [Export] public Attributes Strength { get; set; }
     [Export] public Attributes Defense { get; set; }
     [Export] public Attributes Agility { get; set; }
+    [Export] public int StatCap { get; set; }
     [ExportSubgroup("Skills")]
     [Export] public Attributes Blacksmithing { get; set; }
     [Export] public Attributes Farming { get; set; }
@@ -50,11 +52,12 @@ public partial class CharacterProfile : Resource
     [ExportSubgroup("Dao")]
     [Export] public Attributes Fire { get; set; }
     [Export] public Attributes Earth { get; set; }
-    [Export] public Attributes Water{ get; set; }
+    [Export] public Attributes Water { get; set; }
     [Export] public Attributes Metal { get; set; }
     [Export] public Attributes Air { get; set; }
     [Export] public Attributes Qi { get; set; }
     [Export] public Attributes Karma { get; set; }
+
 
 
 
