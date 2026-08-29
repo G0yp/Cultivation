@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://baft33i0rs2jf"]
+
+[ext_resource type="Script" uid="uid://bmnptc70x66ro" path="res://Scripts/PlayButton.cs" id="1_sjmnu"]
+
+[node name="Control" type="Control" unique_id=2008387243]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuButton" type="MenuButton" parent="." unique_id=1518798509]
+custom_maximum_size = Vector2(124.16, 36.86)
+layout_mode = 0
+offset_left = 60.0
+offset_top = 540.0
+offset_right = 184.16
+offset_bottom = 576.86
+size_flags_horizontal = 0
+size_flags_vertical = 3
+offset_transform_position = Vector2(0.055, 0)
+text = "Settings
+"
+
+[node name="PlayButton" type="Button" parent="." unique_id=898927382]
+custom_maximum_size = Vector2(431.45, 73.18)
+layout_mode = 0
+offset_left = 13.0
+offset_top = 675.0
+offset_right = 427.0
+offset_bottom = 706.0
+size_flags_vertical = 10
+size_flags_stretch_ratio = 0.0
+text = "PLAY"
+script = ExtResource("1_sjmnu")
