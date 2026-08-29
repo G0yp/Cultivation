@@ -85,6 +85,7 @@ Same process as code contribution
 ## Styleguides
 
 Follow typical coding conventions. The Linter we've set up will fix most formatting issues.
+Godot C# Style Guide: https://docs.godotengine.org/en/stable/tutorials/scripting/c_sharp/c_sharp_style_guide.html
 
 
 ### Commit Messages
