@@ -2,8 +2,7 @@ using Godot;
 using System;
 // ( ͡° ᴥ ͡°)
 
-[GlobalClass]
-public partial class CultivationStats : Resource
+public partial class CultivationStats : Node
 {
     public RealmConfig BaseConfig;
     public CharacterProfile CharacterProfile;
