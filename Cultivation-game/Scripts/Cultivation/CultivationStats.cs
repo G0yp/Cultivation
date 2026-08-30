@@ -26,9 +26,9 @@ public partial class CultivationStats : Resource
     {
         if (CanAttemptBreakthrough())
         {
-            RealmConfig.CultivationRealm realm = CurrentRealm;
+            BaseConfig.CurrentRealm = RealmConfig.CultivationRealm.QiRefining;
             int statCap = CharacterProfile.StatCap;
-            statCap = BaseConfig.CalculateStatCap(realm, statCap);
+            statCap = RealmConfig.CalculateStatCap(BaseConfig.CurrentRealm, statCap);
         }
         return false;
     }

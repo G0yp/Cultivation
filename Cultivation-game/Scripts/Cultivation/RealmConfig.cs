@@ -30,10 +30,10 @@ public partial class RealmConfig : Resource
 
 
     public const int StatCap = 10;
-    public static int CalculateStatCap(int currentRealm, int statCap)
+    public static int CalculateStatCap(CultivationRealm currentRealm, int statCap)
     {
         int[] statCapValues = [0, 10, 15, 20, 25, 50];
-        int baseStatCap = statCapValues[currentRealm];
+        int baseStatCap = statCapValues[(int)currentRealm];
         return statCap + baseStatCap;
     }
 
