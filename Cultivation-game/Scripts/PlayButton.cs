@@ -3,13 +3,15 @@ using System;
 
 public partial class PlayButton : Godot.Button
 {
-	// Called when the node enters the scene tree for the first time.
+	
+	public PlayButton PlayButton1;
 	public override void _Ready()
 	{
+		PlayButton1 = GetNode<PlayButton>("/root/Control/VBoxContainer/PlayButton");
 		//make sure the button is not null before connecting
-		if (PlayButton != null)
+		if (PlayButton1 != null)
 		{
-			PlayButton.Pressed += OnPlayButtonPressed;
+			PlayButton1.Pressed += OnPlayButtonPressed;
 		}
 	}
 		//press button do something
@@ -20,7 +22,7 @@ public partial class PlayButton : Godot.Button
 	public override void _ExitTree()
 	{
 			// When exit button press
-			PlayButton.Pressed -= OnPlayButtonPressed;
+			PlayButton1.Pressed -= OnPlayButtonPressed;
 		
 	}
 }
