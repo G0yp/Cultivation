@@ -3,11 +3,11 @@ using System;
 
 public partial class QuitButton : Godot.Button
 {
-	
+
 	public QuitButton QuitButton1;
 	public override void _Ready()
 	{
-		QuitButton1 = GetNode<QuitButton>("/root/Control/VBoxContainer/QuitButton");
+		QuitButton1 = GetNode<QuitButton>("%QuitButton");
 		//make sure the button is not null before connecting
 		if (QuitButton1 != null)
 		{
@@ -23,6 +23,6 @@ public partial class QuitButton : Godot.Button
 	{
 			// When exit button press
 			QuitButton1.Pressed -= OnQuitButtonPressed;
-		
+
 	}
 }

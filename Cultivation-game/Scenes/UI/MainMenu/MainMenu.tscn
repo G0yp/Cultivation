@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://baft33i0rs2jf"]
 
-[ext_resource type="PackedScene" uid="uid://dvu2wt31t3758" path="res://Scenes/MainMenuBackground.tscn" id="1_853f1"]
-[ext_resource type="Script" uid="uid://cldyxwb8pxbs2" path="res://Scripts/MainMenuScript.cs" id="1_ghw46"]
-[ext_resource type="Script" uid="uid://bmnptc70x66ro" path="res://Scripts/PlayButton.cs" id="1_sjmnu"]
-[ext_resource type="Script" uid="uid://nhixjy3idqmj" path="res://Scripts/QuitButton.cs" id="3_8saeu"]
+[ext_resource type="PackedScene" uid="uid://dvu2wt31t3758" path="res://Scenes/UI/MainMenu/MainMenuBackground.tscn" id="1_ehq06"]
+[ext_resource type="Script" uid="uid://bmnptc70x66ro" path="res://Scripts/UI/MainMenu/PlayButton.cs" id="2_gwdte"]
+[ext_resource type="Script" uid="uid://nhixjy3idqmj" path="res://Scripts/UI/MainMenu/QuitButton.cs" id="3_7nukq"]
 
 [node name="MainMenu" type="Control" unique_id=2008387243]
 layout_mode = 3
@@ -16,9 +15,8 @@ offset_right = 2.0
 offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ghw46")
 
-[node name="MainMenuBackground" parent="." unique_id=946686060 instance=ExtResource("1_853f1")]
+[node name="MainMenuBackground" parent="." unique_id=946686060 instance=ExtResource("1_ehq06")]
 
 [node name="MenuButton" type="MenuButton" parent="." unique_id=1518798509]
 custom_maximum_size = Vector2(124.16, 36.86)
@@ -57,13 +55,14 @@ offset_bottom = -9.0
 grow_vertical = 0
 
 [node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=898927382]
+unique_name_in_owner = true
 custom_maximum_size = Vector2(431.45, 73.18)
 layout_mode = 2
 size_flags_vertical = 10
 size_flags_stretch_ratio = 0.0
 theme_override_colors/font_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 1)
 text = "PLAY"
-script = ExtResource("1_sjmnu")
+script = ExtResource("2_gwdte")
 
 [node name="Spacer" type="Control" parent="VBoxContainer" unique_id=1912240307]
 custom_minimum_size = Vector2(0, 30)
@@ -71,8 +70,9 @@ custom_maximum_size = Vector2(50, 50)
 layout_mode = 2
 
 [node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=933609619]
+unique_name_in_owner = true
 custom_maximum_size = Vector2(120, 120)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 1)
 text = "Quit"
-script = ExtResource("3_8saeu")
+script = ExtResource("3_7nukq")

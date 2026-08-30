@@ -3,11 +3,11 @@ using System;
 
 public partial class PlayButton : Godot.Button
 {
-	
+
 	public PlayButton PlayButton1;
 	public override void _Ready()
 	{
-		PlayButton1 = GetNode<PlayButton>("/root/Control/VBoxContainer/PlayButton");
+		PlayButton1 = GetNode<PlayButton>("%PlayButton");
 		//make sure the button is not null before connecting
 		if (PlayButton1 != null)
 		{
@@ -23,6 +23,6 @@ public partial class PlayButton : Godot.Button
 	{
 			// When exit button press
 			PlayButton1.Pressed -= OnPlayButtonPressed;
-		
+
 	}
 }
