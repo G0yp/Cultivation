@@ -21,3 +21,6 @@ shape = SubResource("RectangleShape2D_dewec")
 position = Vector2(0.9016113, 0)
 scale = Vector2(3.2786884, 3.2786884)
 zoom = Vector2(3.535, 3.535)
+process_callback = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
