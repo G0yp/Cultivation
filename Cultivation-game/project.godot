@@ -30,6 +30,14 @@ project/assembly_name="Cultivation"
 
 movie_writer/movie_file="/home/goup/Projects/Cultivation/Cultivation/movie.avi"
 
+[file_customization]
+
+folder_colors={
+"res://Assets/": "red",
+"res://Scenes/": "blue",
+"res://Scripts/": "green"
+}
+
 [input]
 
 ui_left={
