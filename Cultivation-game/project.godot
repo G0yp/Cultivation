@@ -15,10 +15,6 @@ run/main_scene="res://Scenes/Tilemap.tscn"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
-
-NewAutoloadScript="*uid://bc31i5qjcooy7"
-
 [display]
 
 window/size/viewport_width=1280

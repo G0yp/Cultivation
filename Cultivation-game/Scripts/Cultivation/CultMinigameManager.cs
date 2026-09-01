@@ -7,7 +7,7 @@ public partial class CultMinigameManager : Node
     public Label timerDisplay;
     public Timer countdownTimer;
     public Button testButton;
-    public CultivationStats cultStats;
+    public CultivationStats cultStats = new();
 
 
     public int time = 120;
@@ -16,11 +16,12 @@ public partial class CultMinigameManager : Node
 
     public override void _Ready()
     {
-        timerDisplay = GetNode<Label>("/root/CultivationMinigame/Player/TimerDisplay");
-        countdownTimer = GetNode<Timer>("/root/CultivationMinigame/Timer");
-        testButton = GetNode<Button>("/root/CultivationMinigame/Button");
+        timerDisplay = GetNode<Label>("%TimerDisplay");
+        countdownTimer = GetNode<Timer>("%Timer");
+        testButton = GetNode<Button>("%Button");
 
-        cultStats = GetNode<CultivationStats>("/root/CultivationMinigame/Node");
+        // this causes errors
+        // cultStats = GetNode<CultivationStats>("/root/CultivationMinigame/Node");
 
         testButton.Pressed += OnKill;
         countdownTimer.Timeout += OnTimerTimeout;

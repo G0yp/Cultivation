@@ -32,8 +32,9 @@ public partial class CharacterProfile : Resource
     // Settings:
     //
 
-    [ExportCategory("Progression")]
-    [Export] public CultivationStats Cultivation { get; set; }
+    // commented out because cannot export a CultivationStats type on a resource since it extends node
+    // [ExportCategory("Progression")]
+    // [Export] public CultivationStats Cultivation { get; set; }
     public float talent = 1f;
 
     // All current Attributes level off of being used/exercised
