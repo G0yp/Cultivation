@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bbbcf2ffdrwyb"]
 
-[ext_resource type="Texture2D" uid="uid://d060edcxwfwjc" path="res://Assets/Tiles.png" id="2_yuykf"]
+[ext_resource type="Texture2D" uid="uid://d060edcxwfwjc" path="res://Assets/Tilesets/Tiles.png" id="2_yuykf"]
 [ext_resource type="PackedScene" uid="uid://d4cmp8m2xhyq2" path="res://Scenes/Player.tscn" id="4_pt3cm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_inawv"]
@@ -37,7 +37,7 @@ tile_set = SubResource("TileSet_pv05s")
 [node name="Player" parent="." unique_id=2082176764 instance=ExtResource("4_pt3cm")]
 z_index = 1
 position = Vector2(960, 540)
-scale = Vector2(2.715, 2.715)
+scale = Vector2(0.5, 0.5)
 BaseSpeed = 125.0
 Sprint = 37.5
 DashDistance = 20.0
