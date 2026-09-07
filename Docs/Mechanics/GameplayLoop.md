@@ -18,4 +18,10 @@ Cultivate -> Get attribute increase bonus from cultivation method -> farm stats/
 - Charisma: Maybe cultivation speed and reputation impact - increases with realm/sub realm
 - Wisdom: increases - increases by using Qi
 
-Doing things like farming and blacksmithing can increase all 3 physical stats with different
+Doing things like farming and blacksmithing can increase all 3 physical stats with different weights on each one.
+
+- based on the chosen cultivation method (can be changed on each run) you get pooled xp to gain from increasing attributes. 
+  - You get a 1.3x bonus to agility gains, then you get 1000 pooled xp that is then subtracted from when applying that bonus. This allows the player to not have to play on a timer and still get benefits.
+  - The used method also gives a slight boost to a certain attributes effectivness and a debuf to apply with aura
+  - Profiency for each method increases on each cultivation realm.
+- Cultivating
