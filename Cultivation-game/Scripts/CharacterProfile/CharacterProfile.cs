@@ -1,21 +1,11 @@
 using Godot;
 using System;
+using CultivationStats;
 // ( ͡° ᴥ ͡°)
 
 [GlobalClass]
 public partial class CharacterProfile : Resource
 {
-    // List of pinned stats to show in pinned stat page
-    public class PinnedStats
-    {
-        Attributes Stat1 { get; set; }
-        Attributes Stat2 { get; set; }
-        Attributes Stat3 { get; set; }
-        Attributes Stat4 { get; set; }
-        Attributes Stat5 { get; set; }
-        Attributes Stat6 { get; set; }
-    }
-
     // Pinned stats/Overview:
     //
     // Player stats:
@@ -32,32 +22,40 @@ public partial class CharacterProfile : Resource
     // Settings:
     //
 
-    // commented out because cannot export a CultivationStats type on a resource since it extends node
-    // [ExportCategory("Progression")]
-    // [Export] public CultivationStats Cultivation { get; set; }
-    public float talent = 1f;
+
+    // Creates a globally accessible instance of CharacterProfile
+    public static CharacterProfile Instance { get; private set; }
+
+    public override void _Ready()
+    {
+        Instance = this;
+    }
+
+
+    //Cultivation
+    public CultivationStats Cultivation { get; set; }
 
     // All current Attributes level off of being used/exercised
-    [ExportCategory("Player stats")]
-    [ExportSubgroup("Attributes")]
-    [Export] public Attributes Strength { get; set; }
-    [Export] public Attributes Defense { get; set; }
-    [Export] public Attributes Agility { get; set; }
-    [Export] public int StatCap { get; set; }
-    [ExportSubgroup("Skills")]
-    [Export] public Attributes Blacksmithing { get; set; }
-    [Export] public Attributes Farming { get; set; }
-    [Export] public Attributes Enchanting { get; set; }
-    [Export] public Attributes Exploring { get; set; }
-    [Export] public Attributes MartialArts { get; set; }
-    [ExportSubgroup("Dao")]
-    [Export] public Attributes Fire { get; set; }
-    [Export] public Attributes Earth { get; set; }
-    [Export] public Attributes Water { get; set; }
-    [Export] public Attributes Metal { get; set; }
-    [Export] public Attributes Air { get; set; }
-    [Export] public Attributes Qi { get; set; }
-    [Export] public Attributes Karma { get; set; }
+    public Attributes Strength { get; set; }
+    public Attributes Defense { get; set; }
+    public Attributes Agility { get; set; }
+    public int StatCap { get; set; }
+
+    // skills
+    public Attributes Blacksmithing { get; set; }
+    public Attributes Farming { get; set; }
+    public Attributes Enchanting { get; set; }
+    public Attributes Exploring { get; set; }
+    public Attributes MartialArts { get; set; }
+
+    // Daos
+    public Attributes Fire { get; set; }
+    public Attributes Earth { get; set; }
+    public Attributes Water { get; set; }
+    public Attributes Metal { get; set; }
+    public Attributes Air { get; set; }
+    public Attributes Qi { get; set; }
+    public Attributes Karma { get; set; }
 
 
 

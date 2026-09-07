@@ -7,7 +7,6 @@ public partial class CultMinigameManager : Node
     public Label timerDisplay;
     public Timer countdownTimer;
     public Button testButton;
-    public CultivationStats cultStats = new();
 
 
     public int time = 120;
@@ -20,16 +19,13 @@ public partial class CultMinigameManager : Node
         countdownTimer = GetNode<Timer>("%Timer");
         testButton = GetNode<Button>("%Button");
 
-        // this causes errors
-        // cultStats = GetNode<CultivationStats>("/root/CultivationMinigame/Node");
-
         testButton.Pressed += OnKill;
         countdownTimer.Timeout += OnTimerTimeout;
 
         timerDisplay.Text = $"{time}";
 
 
-        qiPerKill = cultStats.qiGainFlat * cultStats.qiGainMult;
+        qiPerKill = CharacterProfile.Instance.Cultivation.qiGainFlat * CharacterProfile.Instance.Cultivation.qiGainMult;
     }
 
     private void OnKill()
@@ -46,7 +42,7 @@ public partial class CultMinigameManager : Node
         }
         else
         {
-            cultStats.currentQi += totalKills * qiPerKill;
+            CharacterProfile.Instance.Cultivation.currentQi += totalKills * qiPerKill;
         }
     }
 }

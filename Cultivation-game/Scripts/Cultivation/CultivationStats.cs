@@ -2,33 +2,37 @@ using Godot;
 using System;
 // ( ͡° ᴥ ͡°)
 
-public partial class CultivationStats : Node
+public partial class CultivationStats : Resource
 {
     public RealmConfig BaseConfig;
-    public CharacterProfile CharacterProfile;
-    public float qiGainFlat = 1f;
-    public float qiGainMult = 1f;
-    public float currentQi = 0f;
+    public float realmProgress = 0f; // How close the player is to advancing
 
-
-    public void ProcessQiGathering()
-    {
-        currentQi += (qiGainFlat * qiGainMult);
-    }
+    public RealmConfig.CultivationRealm CurrentRealm = RealmConfig.CultivationRealm.Mortal;
+    public RealmConfig.CultivationStage CurrentStage = RealmConfig.CultivationStage.Lower;
 
     public bool CanAttemptBreakthrough()
     {
-        return BaseConfig != null && currentQi >= BaseConfig.QiToBreakthrough;
+        return realmProgress >= BaseConfig.QiToBreakthrough;
     }
 
+    // Breakthrough by checking if realm is complete
     public bool Breakthrough()
     {
-        if (CanAttemptBreakthrough())
+        if (CanAttemptBreakthrough() && CurrentStage == RealmConfig.CultivationStage.Peak)
         {
-            BaseConfig.CurrentRealm = RealmConfig.CultivationRealm.QiRefining;
-            int statCap = CharacterProfile.StatCap;
-            statCap = RealmConfig.CalculateStatCap(BaseConfig.CurrentRealm, statCap);
+            CurrentRealm += 1;
+            CharacterProfile.Instance.StatCap = RealmConfig.CalculateStatCap(CurrentRealm, CharacterProfile.Instance.StatCap);
         }
         return false;
+    }
+
+    public bool IncreaseStage()
+    {
+        if (CanAttemptBreakthrough() && CurrentStage != RealmConfig.CultivationStage.Peak)
+        {
+            CurrentStage += 1;
+            CharacterProfile.Instance.StatCap = RealmConfig.CalculateStatCap(CurrentRealm, CharacterProfile.Instance.StatCap);
+        }
+
     }
 }

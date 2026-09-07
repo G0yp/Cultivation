@@ -5,12 +5,12 @@ using System;
 [GlobalClass]
 public partial class Attributes : Resource
 {
-    public int level = 1;
+    public double level = 1;
     public float currentXp = 0f;
 
     public float GetRequiredXpForNextLevel()
     {
-        return (float)(100.0 * Math.Pow((double)level, 1.3));
+        return (float)(100.0 * Math.Pow(level, 1.3));
     }
 
     public void AddXp(float amount, int levelCap)
@@ -30,5 +30,4 @@ public partial class Attributes : Resource
             }
         }
     }
-
 }
