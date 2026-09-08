@@ -16,6 +16,36 @@ public partial class Player : CharacterBody2D{
     // Internal speed
     float speed;
 
+    [Export] private int health = 100;
+    [Export] private Hurtbox hurtbox;
+
+    public override void _Ready()
+    {
+        if (hurtbox != null)
+        {
+            hurtbox.OnDamageReceived += HandleDamage;
+        }
+    }
+
+    private void HandleDamage(int amount)
+    {
+        health -= amount;
+        GD.Print($"hit for {amount}");
+
+        if (health <= 0)
+        {
+            //death
+        }
+    }
+
+    public override void _ExitTree()
+    {
+        if (hurtbox != null)
+        {
+            hurtbox.OnDamageReceived -= HandleDamage;
+        }
+    }
+
 
 	public override void _PhysicsProcess(double delta){
 		Vector2 velocity = Velocity;
