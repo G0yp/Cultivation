@@ -2,6 +2,8 @@ using Godot;
 using System;
 // ( ͡° ᴥ ͡°)
 
+namespace CultivationGame.Combat;
+
 public partial class Hitbox : Area2D
 {
     [Export] public int Damage { get; set; } = 10;

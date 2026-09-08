@@ -28,7 +28,7 @@ public partial class CultMinigameManager : Node
         timerDisplay.Text = $"{time}";
 
 
-        qiPerKill = GameState.Instance.PlayerProfile.Cultivation.qiGainFlat * GameState.Instance.PlayerProfile.Cultivation.qiGainMult;
+       qiPerKill = GameState.Instance.PlayerProfile.Cultivation.qiGainFlat * GameState.Instance.PlayerProfile.Cultivation.qiGainMult;
     }
 
     private void OnKill()

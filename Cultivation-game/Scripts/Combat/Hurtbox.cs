@@ -2,6 +2,8 @@ using Godot;
 using System;
 // ( ͡° ᴥ ͡°)
 
+namespace CultivationGame.Combat;
+
 public partial class Hurtbox : Area2D
 {
     public event Action<int> OnDamageReceived;
@@ -10,5 +12,4 @@ public partial class Hurtbox : Area2D
     {
         OnDamageReceived?.Invoke(amount);
     }
-
 }

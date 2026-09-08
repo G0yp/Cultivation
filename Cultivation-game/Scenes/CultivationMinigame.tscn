@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://4awhhlq1r7ai" path="res://Scripts/Cultivation/CultMinigameManager.cs" id="1_6x1pt"]
 [ext_resource type="PackedScene" uid="uid://d4cmp8m2xhyq2" path="res://Scenes/Player.tscn" id="1_vpjbn"]
-[ext_resource type="Texture2D" uid="uid://d060edcxwfwjc" path="res://Assets/Tiles.png" id="2_6x1pt"]
+[ext_resource type="Texture2D" uid="uid://d060edcxwfwjc" path="res://Assets/Tilesets/Tiles.png" id="2_6x1pt"]
+[ext_resource type="PackedScene" uid="uid://bul7q1wcvxmia" path="res://Scenes/EnemyTest.tscn" id="4_opeo3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_opeo3"]
 texture = ExtResource("2_6x1pt")
@@ -59,3 +60,6 @@ offset_top = 6.0
 offset_right = 15.0
 offset_bottom = 37.0
 text = "kill"
+
+[node name="EnemyTest" parent="." unique_id=2088052888 instance=ExtResource("4_opeo3")]
+position = Vector2(76, -21)
