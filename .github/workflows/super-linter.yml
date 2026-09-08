@@ -17,6 +17,7 @@ jobs:
     if: github.actor !='super-linter'
     permissions:
       contents: write
+      statuses: write
 
     steps:
       - name: Checkout code
