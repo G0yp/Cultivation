@@ -1,8 +1,10 @@
 using Godot;
 using System;
 
+namespace CultivationGame.Player;
 
 public partial class Player : CharacterBody2D{
+
 	// Base speed which gets modified
 	[Export]
 	public float BaseSpeed;
@@ -11,8 +13,9 @@ public partial class Player : CharacterBody2D{
 	public float Sprint;
 	[Export]
 	public float DashDistance;
-	// Internal speed
-	float speed;
+    // Internal speed
+    float speed;
+
 
 	public override void _PhysicsProcess(double delta){
 		Vector2 velocity = Velocity;

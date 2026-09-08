@@ -15,6 +15,10 @@ run/main_scene="uid://baft33i0rs2jf"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameState="*uid://coicd822x1v4a"
+
 [display]
 
 window/size/viewport_width=1280
