@@ -27,7 +27,7 @@ public partial class CharacterProfile : Resource
 
 
     //Cultivation
-    public CultivationStats Cultivation { get; set; }
+    public CultivationStats Cultivation { get; set; } = new CultivationStats();
 
     // All current Attributes level off of being used/exercised
     public Attributes Strength { get; set; }
