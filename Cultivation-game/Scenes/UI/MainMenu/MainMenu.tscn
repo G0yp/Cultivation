@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://baft33i0rs2jf"]
+
+[ext_resource type="PackedScene" uid="uid://dvu2wt31t3758" path="res://Scenes/UI/MainMenu/MainMenuBackground.tscn" id="1_ehq06"]
+[ext_resource type="Script" uid="uid://bmnptc70x66ro" path="res://Scripts/UI/MainMenu/PlayButton.cs" id="2_gwdte"]
+[ext_resource type="Script" uid="uid://nhixjy3idqmj" path="res://Scripts/UI/MainMenu/QuitButton.cs" id="3_7nukq"]
+
+[node name="MainMenu" type="Control" unique_id=2008387243]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainMenuBackground" parent="." unique_id=946686060 instance=ExtResource("1_ehq06")]
+
+[node name="MenuButton" type="MenuButton" parent="." unique_id=1518798509]
+custom_maximum_size = Vector2(124.16, 36.86)
+layout_mode = 0
+offset_left = 83.0
+offset_top = 490.0
+offset_right = 207.16
+offset_bottom = 526.86
+size_flags_horizontal = 0
+size_flags_vertical = 3
+offset_transform_position = Vector2(0.055, 0)
+theme_override_colors/font_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 1)
+text = "Settings
+"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=553178392]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 109.0
+offset_right = 601.0
+offset_bottom = 189.0
+theme_override_colors/default_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = " CULTIVATION GAME"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1656963510]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = -109.0
+offset_right = 440.0
+offset_bottom = -9.0
+grow_vertical = 0
+
+[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=898927382]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(431.45, 73.18)
+layout_mode = 2
+size_flags_vertical = 10
+size_flags_stretch_ratio = 0.0
+theme_override_colors/font_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 1)
+text = "PLAY"
+script = ExtResource("2_gwdte")
+
+[node name="Spacer" type="Control" parent="VBoxContainer" unique_id=1912240307]
+custom_minimum_size = Vector2(0, 30)
+custom_maximum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=933609619]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(120, 120)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 1)
+text = "Quit"
+script = ExtResource("3_7nukq")
