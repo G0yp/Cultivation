@@ -2,6 +2,8 @@ using Godot;
 using System;
 // ( ͡° ᴥ ͡°)
 
+namespace CultivationGame.Profile;
+
 [GlobalClass]
 public partial class Attributes : Resource
 {

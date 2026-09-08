@@ -1,6 +1,9 @@
+using CultivationGame.Core;
 using Godot;
 using System;
 // ( ͡° ᴥ ͡°)
+
+namespace CultivationGame.Cultivation;
 
 public partial class CultMinigameManager : Node
 {
@@ -25,7 +28,7 @@ public partial class CultMinigameManager : Node
         timerDisplay.Text = $"{time}";
 
 
-        qiPerKill = CharacterProfile.Instance.Cultivation.qiGainFlat * CharacterProfile.Instance.Cultivation.qiGainMult;
+        qiPerKill = GameState.Instance.PlayerProfile.Cultivation.qiGainFlat * GameState.Instance.PlayerProfile.Cultivation.qiGainMult;
     }
 
     private void OnKill()
@@ -42,7 +45,7 @@ public partial class CultMinigameManager : Node
         }
         else
         {
-            CharacterProfile.Instance.Cultivation.currentQi += totalKills * qiPerKill;
+            GameState.Instance.PlayerProfile.Cultivation.currentQi += totalKills * qiPerKill;
         }
     }
 }

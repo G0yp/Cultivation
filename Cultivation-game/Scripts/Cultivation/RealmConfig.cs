@@ -2,6 +2,8 @@ using Godot;
 using System;
 // ( ͡° ᴥ ͡°)
 
+namespace CultivationGame.Cultivation;
+
 [GlobalClass]
 public partial class RealmConfig : Resource
 {

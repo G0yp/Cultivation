@@ -1,6 +1,7 @@
 using Godot;
 using System;
 
+namespace CultivationGame.Player;
 
 public partial class Player : CharacterBody2D{
 

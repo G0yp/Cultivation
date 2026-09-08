@@ -1,11 +1,17 @@
+using CultivationGame.Core;
 using Godot;
 using System;
 // ( ͡° ᴥ ͡°)
+
+namespace CultivationGame.Cultivation;
 
 public partial class CultivationStats : Resource
 {
     public RealmConfig BaseConfig;
     public float realmProgress = 0f; // How close the player is to advancing
+    public float qiGainFlat = 1f;
+    public float qiGainMult = 1f;
+    public float currentQi = 0f;
 
     public RealmConfig.CultivationRealm CurrentRealm = RealmConfig.CultivationRealm.Mortal;
     public RealmConfig.CultivationStage CurrentStage = RealmConfig.CultivationStage.Lower;
@@ -21,7 +27,8 @@ public partial class CultivationStats : Resource
         if (CanAttemptBreakthrough() && CurrentStage == RealmConfig.CultivationStage.Peak)
         {
             CurrentRealm += 1;
-            CharacterProfile.Instance.StatCap = RealmConfig.CalculateStatCap(CurrentRealm, CharacterProfile.Instance.StatCap);
+            GameState.Instance.PlayerProfile.StatCap = RealmConfig.CalculateStatCap(CurrentRealm, GameState.Instance.PlayerProfile.StatCap);
+            return true;
         }
         return false;
     }
@@ -31,8 +38,10 @@ public partial class CultivationStats : Resource
         if (CanAttemptBreakthrough() && CurrentStage != RealmConfig.CultivationStage.Peak)
         {
             CurrentStage += 1;
-            CharacterProfile.Instance.StatCap = RealmConfig.CalculateStatCap(CurrentRealm, CharacterProfile.Instance.StatCap);
+            GameState.Instance.PlayerProfile.StatCap = RealmConfig.CalculateStatCap(CurrentRealm, GameState.Instance.PlayerProfile.StatCap);
+            return true;
         }
+        return false;
 
     }
 }

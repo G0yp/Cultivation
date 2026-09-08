@@ -1,7 +1,9 @@
 using Godot;
 using System;
-using CultivationStats;
+using CultivationGame.Cultivation;
 // ( ͡° ᴥ ͡°)
+
+namespace CultivationGame.Profile;
 
 [GlobalClass]
 public partial class CharacterProfile : Resource
@@ -22,14 +24,6 @@ public partial class CharacterProfile : Resource
     // Settings:
     //
 
-
-    // Creates a globally accessible instance of CharacterProfile
-    public static CharacterProfile Instance { get; private set; }
-
-    public override void _Ready()
-    {
-        Instance = this;
-    }
 
 
     //Cultivation
