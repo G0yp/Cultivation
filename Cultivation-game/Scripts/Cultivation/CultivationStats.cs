@@ -9,7 +9,7 @@ public partial class CultivationStats : Resource
 {
     public RealmConfig BaseConfig;
     public float realmProgress = 0f; // How close the player is to advancing
-    public float qiGainFlat = 1f;
+    public float qiGainFlat = 1f;  // Leaving this and the two below here because cult minigame requires them. They should probably be moved to that file and calculated there based on attributes.
     public float qiGainMult = 1f;
     public float currentQi = 0f;
 
