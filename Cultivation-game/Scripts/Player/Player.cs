@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using CultivationGame.Combat;
 
 namespace CultivationGame.Player;
 
@@ -17,7 +18,7 @@ public partial class Player : CharacterBody2D{
     float speed;
 
     [Export] private int health = 100;
-    [Export] private Hurtbox hurtbox;
+    private Hurtbox hurtbox;
 
     public override void _Ready()
     {
