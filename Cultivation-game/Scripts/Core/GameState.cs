@@ -17,10 +17,4 @@ public partial class GameState : Node
         Instance = this;
         PlayerProfile = new CharacterProfile();
     }
-
-
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _Process(double delta)
-    {
-    }
 }

@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bul7q1wcvxmia"]
+
+[ext_resource type="Texture2D" uid="uid://8qcd43k3k5oo" path="res://Assets/Characters/enemy.png" id="1_4kk4d"]
+[ext_resource type="Script" uid="uid://dyr8ish23mt08" path="res://Scripts/Combat/Hitbox.cs" id="2_h5d2w"]
+[ext_resource type="Script" uid="uid://c2rsfno3koffn" path="res://Scripts/Combat/Hurtbox.cs" id="3_6upua"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xqsf4"]
+radius = 9.0
+height = 18.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgpe2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jgpe2"]
+height = 64.0
+
+[node name="EnemyTest" type="CharacterBody2D" unique_id=1732775923]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2076496778]
+position = Vector2(0, 23)
+shape = SubResource("CapsuleShape2D_xqsf4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1487957188]
+texture = ExtResource("1_4kk4d")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1106771731]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("2_h5d2w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1382102522]
+position = Vector2(20, -4)
+shape = SubResource("RectangleShape2D_jgpe2")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=421387967]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("3_6upua")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=82630748]
+shape = SubResource("CapsuleShape2D_jgpe2")

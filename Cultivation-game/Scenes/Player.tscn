@@ -1,21 +1,32 @@
 [gd_scene format=3 uid="uid://d4cmp8m2xhyq2"]
 
-[ext_resource type="Script" uid="uid://bebybt8j6fme5" path="res://Scripts/Player.cs" id="1_kyqiw"]
+[ext_resource type="Script" uid="uid://cp4u0usc13dpo" path="res://Scripts/Player/Player.cs" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://cjrphk6o1ye51" path="res://Assets/Characters/MainPlayer.png" id="2_kyqiw"]
+[ext_resource type="Script" uid="uid://8mxbygqhbjrn" path="res://Scripts/Combat/PlayerAttack.cs" id="3_gntrk"]
+[ext_resource type="Script" uid="uid://dyr8ish23mt08" path="res://Scripts/Combat/Hitbox.cs" id="4_5ixxa"]
+[ext_resource type="Script" uid="uid://c2rsfno3koffn" path="res://Scripts/Combat/Hurtbox.cs" id="5_nn08x"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dewec"]
-size = Vector2(10, 50)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xqsf4"]
+radius = 8.0
+height = 16.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgpe2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jgpe2"]
+height = 54.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1665264051]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_kyqiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1507831784]
+position = Vector2(-1, -7)
+shape = SubResource("CapsuleShape2D_xqsf4")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=191241706]
 texture = ExtResource("2_kyqiw")
 offset = Vector2(0, -32.465)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1507831784]
-position = Vector2(-2, -25)
-shape = SubResource("RectangleShape2D_dewec")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=902928498]
 position = Vector2(0.9016113, 0)
@@ -24,3 +35,26 @@ zoom = Vector2(3.535, 3.535)
 process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
+
+[node name="PlayerAttack" type="Node2D" parent="." unique_id=728267097 node_paths=PackedStringArray("hitbox", "hitboxShape")]
+script = ExtResource("3_gntrk")
+hitbox = NodePath("../Hitbox")
+hitboxShape = NodePath("../Hitbox/CollisionShape2D")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=511180824]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("4_5ixxa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1056056940]
+position = Vector2(19, -30)
+shape = SubResource("RectangleShape2D_jgpe2")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=628956708]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("5_nn08x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=385514696]
+position = Vector2(-1, -26)
+shape = SubResource("CapsuleShape2D_jgpe2")
